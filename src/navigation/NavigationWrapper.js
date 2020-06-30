@@ -1,12 +1,17 @@
-import React from 'react'
-import {NavigationContainer} from '@react-navigation/native'
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
 
-import TabNavigator from './TabNavigator'
+import TabNavigator, { AuthNavigator } from "./TabNavigator";
+import StartUpScreen from "screens/StartUpScreen";
 
 export default function NavigationWrapper() {
-    return (
-        <NavigationContainer>
-            <TabNavigator />
-        </NavigationContainer>
-    )
+  const isAuth = false;
+  const triedLogin = true;
+  return (
+    <NavigationContainer>
+      {isAuth && <TabNavigator />}
+      {!isAuth && triedLogin && <AuthNavigator />}
+      {!isAuth && !triedLogin && <StartUpScreen />}
+    </NavigationContainer>
+  );
 }
