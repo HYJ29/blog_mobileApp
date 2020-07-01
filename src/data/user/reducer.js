@@ -7,7 +7,7 @@ const INITIAL_STATE = {
 
 const user = produce((draft, action) => {
   switch (action.type) {
-    case AT.LOG_IN:
+    case AT.SET_USER_SESSION:
       draft.userSession = action.userSession;
       break;
     default:

@@ -6,7 +6,7 @@ import * as Font from "expo-font";
 import styled, { ThemeProvider } from "styled-components";
 
 import { NavigationWrapper } from "navigation";
-import store from "data/configureStore";
+import configureStore from "data/configureStore";
 import theme from "theme";
 
 const fetchData = () => {
@@ -16,6 +16,8 @@ const fetchData = () => {
     jua: require("./assets/fonts/Jua-Regular.ttf"),
   });
 };
+
+const store = configureStore();
 
 export default function App() {
   const [dataLoaded, setDateLoaded] = useState(false);
